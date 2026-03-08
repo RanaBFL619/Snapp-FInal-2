@@ -1,0 +1,23 @@
+target 'iosApp' do
+  use_frameworks!
+  platform :ios, '16.0'
+  pod 'shared', :path => '../shared'
+end
+
+post_install do |installer|
+  # Add output file list to "[CP-User] Build shared" so Xcode can skip the script when the framework is up to date (fixes "run during every build" warning).
+  project = installer.pods_project
+  shared_target = project.targets.find { |t| t.name == 'shared' }
+  next unless shared_target
+
+  script_phase = shared_target.build_phases.find { |bp| bp.respond_to?(:name) && bp.name == '[CP-User] Build shared' }
+  next unless script_phase
+
+  output_list_path = 'Target Support Files/shared/shared-build-output.xcfilelist'
+  output_list_full = File.join(installer.sandbox.root, output_list_path)
+  FileUtils.mkdir_p(File.dirname(output_list_full))
+  File.write(output_list_full, "$(PODS_TARGET_SRCROOT)/build/cocoapods/framework/shared.framework\n")
+
+  script_phase.output_file_list_paths = [output_list_path]
+  project.save
+end

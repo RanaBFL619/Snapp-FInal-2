@@ -1,0 +1,816 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
+		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		AB34563CC657336B36B30860 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BD2BC9AB12F3F84E8E06CD /* Pods_iosApp.framework */; };
+		B100000100010000000001 /* SnappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000100010000000002 /* SnappApp.swift */; };
+		B100000200010000000001 /* IosKoinSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000200010000000002 /* IosKoinSetup.swift */; };
+		B100000300010000000001 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000300010000000002 /* AppRouter.swift */; };
+		B100000400010000000001 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000400010000000002 /* RootView.swift */; };
+		B100000500010000000001 /* AppShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000500010000000002 /* AppShell.swift */; };
+		B100000600010000000001 /* SideDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000600010000000002 /* SideDrawer.swift */; };
+		B100000700010000000001 /* TopToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000700010000000002 /* TopToolbar.swift */; };
+		B100000800010000000001 /* AppFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000800010000000002 /* AppFooter.swift */; };
+		B100005000010000000001 /* SkeletonShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005000010000000002 /* SkeletonShell.swift */; };
+		B100005100010000000001 /* BottomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005100010000000002 /* BottomNavBar.swift */; };
+		B100000900010000000001 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000900010000000002 /* LoginView.swift */; };
+		B100001000010000000001 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001000010000000002 /* ForgotPasswordView.swift */; };
+		B100001100010000000001 /* GenericPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001100010000000002 /* GenericPageView.swift */; };
+		B100001200010000000001 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001200010000000002 /* RecordDetailView.swift */; };
+		B100001300010000000001 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001300010000000002 /* ReportsView.swift */; };
+		B100001400010000000001 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001400010000000002 /* AppTheme.swift */; };
+		B100001500010000000001 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001500010000000002 /* ThemeColors.swift */; };
+		B100001600010000000001 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001600010000000002 /* AuthViewModel.swift */; };
+		B100001700010000000001 /* LayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001700010000000002 /* LayoutViewModel.swift */; };
+		B100001800010000000001 /* GenericPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001800010000000002 /* GenericPageViewModel.swift */; };
+		B100001900010000000001 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100001900010000000002 /* RecordViewModel.swift */; };
+		B100003000010000000001 /* WidgetRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100003000010000000002 /* WidgetRegistry.swift */; };
+		B100003100010000000001 /* WidgetRenderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100003100010000000002 /* WidgetRenderContext.swift */; };
+		B100003200010000000001 /* WidgetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100003200010000000002 /* WidgetAction.swift */; };
+		B100003300010000000001 /* WidgetHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100003300010000000002 /* WidgetHost.swift */; };
+		B100008500010000000001 /* WidgetErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008500010000000002 /* WidgetErrorWrapper.swift */; };
+		B100004000010000000001 /* AppNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100004000010000000002 /* AppNavigationStack.swift */; };
+		B100004100010000000001 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100004100010000000002 /* NotFoundView.swift */; };
+		B100004300010000000001 /* KeyboardFriendlyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100004300010000000002 /* KeyboardFriendlyTextField.swift */; };
+		B100004500010000000001 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100004500010000000002 /* ToastManager.swift */; };
+		B100005200010000000001 /* LayoutApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005200010000000002 /* LayoutApiService.swift */; };
+		B100005400010000000001 /* DataApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005400010000000002 /* DataApiService.swift */; };
+		B100005500010000000001 /* ContainerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005500010000000002 /* ContainerLayoutView.swift */; };
+		B100005600010000000001 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005600010000000002 /* LayoutHelper.swift */; };
+		B100005800010000000001 /* AccordionWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005800010000000002 /* AccordionWidgetView.swift */; };
+		B100005900010000000001 /* ActivityFeedWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005900010000000002 /* ActivityFeedWidgetView.swift */; };
+		B100005A00010000000001 /* AreaChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005A00010000000002 /* AreaChartWidgetView.swift */; };
+		B100005B00010000000001 /* BarChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005B00010000000002 /* BarChartWidgetView.swift */; };
+		B100005C00010000000001 /* BubbleChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005C00010000000002 /* BubbleChartWidgetView.swift */; };
+		B100005D00010000000001 /* ButtonWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005D00010000000002 /* ButtonWidgetView.swift */; };
+		B100005E00010000000001 /* CalendarWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005E00010000000002 /* CalendarWidgetView.swift */; };
+		B100005F00010000000001 /* CandlestickWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100005F00010000000002 /* CandlestickWidgetView.swift */; };
+		B100006000010000000001 /* CardWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006000010000000002 /* CardWidgetView.swift */; };
+		B100006100010000000001 /* CarouselWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006100010000000002 /* CarouselWidgetView.swift */; };
+		B100006200010000000001 /* ChatWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006200010000000002 /* ChatWidgetView.swift */; };
+		B100006300010000000001 /* ComprehensiveTableWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006300010000000002 /* ComprehensiveTableWidgetView.swift */; };
+		B100006400010000000001 /* ContactWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006400010000000002 /* ContactWidgetView.swift */; };
+		B100006500010000000001 /* DonutChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006500010000000002 /* DonutChartWidgetView.swift */; };
+		B100006600010000000001 /* FieldWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006600010000000002 /* FieldWidgetView.swift */; };
+		B100006700010000000001 /* FileUploadWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006700010000000002 /* FileUploadWidgetView.swift */; };
+		B100006800010000000001 /* FileViewerWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006800010000000002 /* FileViewerWidgetView.swift */; };
+		B100006900010000000001 /* FunnelChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006900010000000002 /* FunnelChartWidgetView.swift */; };
+		B100006A00010000000001 /* GanttChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006A00010000000002 /* GanttChartWidgetView.swift */; };
+		B100006B00010000000001 /* GoogleMapWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006B00010000000002 /* GoogleMapWidgetView.swift */; };
+		B100006C00010000000001 /* HeatMapWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006C00010000000002 /* HeatMapWidgetView.swift */; };
+		B100006D00010000000001 /* IFrameWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006D00010000000002 /* IFrameWidgetView.swift */; };
+		B100006E00010000000001 /* ImageDisplayWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006E00010000000002 /* ImageDisplayWidgetView.swift */; };
+		B100006F00010000000001 /* ImportWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100006F00010000000002 /* ImportWidgetView.swift */; };
+		B100007000010000000001 /* KanbanWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007000010000000002 /* KanbanWidgetView.swift */; };
+		B100007100010000000001 /* KnowledgeGraphWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007100010000000002 /* KnowledgeGraphWidgetView.swift */; };
+		B100007200010000000001 /* LineChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007200010000000002 /* LineChartWidgetView.swift */; };
+		B100007300010000000001 /* MetricWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007300010000000002 /* MetricWidgetView.swift */; };
+		B100007400010000000001 /* PaymentGatewayWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007400010000000002 /* PaymentGatewayWidgetView.swift */; };
+		B100007500010000000001 /* PieChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007500010000000002 /* PieChartWidgetView.swift */; };
+		B100007600010000000001 /* PipelineWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007600010000000002 /* PipelineWidgetView.swift */; };
+		B100007700010000000001 /* RadarChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007700010000000002 /* RadarChartWidgetView.swift */; };
+		B100007800010000000001 /* RadialChartWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007800010000000002 /* RadialChartWidgetView.swift */; };
+		B100007900010000000001 /* ReportsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007900010000000002 /* ReportsWidgetView.swift */; };
+		B100007A00010000000001 /* RichTextDisplayWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007A00010000000002 /* RichTextDisplayWidgetView.swift */; };
+		B100007B00010000000001 /* RichTextEditorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007B00010000000002 /* RichTextEditorWidgetView.swift */; };
+		B100007C00010000000001 /* StepperWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007C00010000000002 /* StepperWidgetView.swift */; };
+		B100007D00010000000001 /* TabWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007D00010000000002 /* TabWidgetView.swift */; };
+		B100007E00010000000001 /* TableWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007E00010000000002 /* TableWidgetView.swift */; };
+		B100007F00010000000001 /* TemplateBuilderWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100007F00010000000002 /* TemplateBuilderWidgetView.swift */; };
+		B100008000010000000001 /* TodoListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008000010000000002 /* TodoListWidgetView.swift */; };
+		B100008100010000000001 /* VideoDisplayWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008100010000000002 /* VideoDisplayWidgetView.swift */; };
+		B100008200010000000001 /* WhiteboardWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008200010000000002 /* WhiteboardWidgetView.swift */; };
+		B100008300010000000001 /* WidgetNameTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100008300010000000002 /* WidgetNameTemplateView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		059DBF1CBEA0909116DF3582 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		6AC9773179445288A359B158 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2BD2BC9AB12F3F84E8E06CD /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B100000100010000000002 /* SnappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappApp.swift; sourceTree = "<group>"; };
+		B100000200010000000002 /* IosKoinSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosKoinSetup.swift; sourceTree = "<group>"; };
+		B100000300010000000002 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		B100000400010000000002 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B100000500010000000002 /* AppShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShell.swift; sourceTree = "<group>"; };
+		B100000600010000000002 /* SideDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDrawer.swift; sourceTree = "<group>"; };
+		B100000700010000000002 /* TopToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopToolbar.swift; sourceTree = "<group>"; };
+		B100000800010000000002 /* AppFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFooter.swift; sourceTree = "<group>"; };
+		B100005000010000000002 /* SkeletonShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonShell.swift; sourceTree = "<group>"; };
+		B100005100010000000002 /* BottomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavBar.swift; sourceTree = "<group>"; };
+		B100000900010000000002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B100001000010000000002 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		B100001100010000000002 /* GenericPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPageView.swift; sourceTree = "<group>"; };
+		B100001200010000000002 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		B100001300010000000002 /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		B100001400010000000002 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		B100001500010000000002 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
+		B100001600010000000002 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		B100001700010000000002 /* LayoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewModel.swift; sourceTree = "<group>"; };
+		B100001800010000000002 /* GenericPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPageViewModel.swift; sourceTree = "<group>"; };
+		B100001900010000000002 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		B100003000010000000002 /* WidgetRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetRegistry.swift; sourceTree = "<group>"; };
+		B100003100010000000002 /* WidgetRenderContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetRenderContext.swift; sourceTree = "<group>"; };
+		B100003200010000000002 /* WidgetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAction.swift; sourceTree = "<group>"; };
+		B100003300010000000002 /* WidgetHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHost.swift; sourceTree = "<group>"; };
+		B100008500010000000002 /* WidgetErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetErrorWrapper.swift; sourceTree = "<group>"; };
+		B100004000010000000002 /* AppNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationStack.swift; sourceTree = "<group>"; };
+		B100004100010000000002 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
+		B100004300010000000002 /* KeyboardFriendlyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFriendlyTextField.swift; sourceTree = "<group>"; };
+		B100004500010000000002 /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		B100005200010000000002 /* LayoutApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutApiService.swift; sourceTree = "<group>"; };
+		B100005400010000000002 /* DataApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataApiService.swift; sourceTree = "<group>"; };
+		B100005500010000000002 /* ContainerLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerLayoutView.swift; sourceTree = "<group>"; };
+		B100005600010000000002 /* LayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
+		B100005800010000000002 /* AccordionWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionWidgetView.swift; sourceTree = "<group>"; };
+		B100005900010000000002 /* ActivityFeedWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedWidgetView.swift; sourceTree = "<group>"; };
+		B100005A00010000000002 /* AreaChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaChartWidgetView.swift; sourceTree = "<group>"; };
+		B100005B00010000000002 /* BarChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartWidgetView.swift; sourceTree = "<group>"; };
+		B100005C00010000000002 /* BubbleChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartWidgetView.swift; sourceTree = "<group>"; };
+		B100005D00010000000002 /* ButtonWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWidgetView.swift; sourceTree = "<group>"; };
+		B100005E00010000000002 /* CalendarWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWidgetView.swift; sourceTree = "<group>"; };
+		B100005F00010000000002 /* CandlestickWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickWidgetView.swift; sourceTree = "<group>"; };
+		B100006000010000000002 /* CardWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWidgetView.swift; sourceTree = "<group>"; };
+		B100006100010000000002 /* CarouselWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselWidgetView.swift; sourceTree = "<group>"; };
+		B100006200010000000002 /* ChatWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWidgetView.swift; sourceTree = "<group>"; };
+		B100006300010000000002 /* ComprehensiveTableWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensiveTableWidgetView.swift; sourceTree = "<group>"; };
+		B100006400010000000002 /* ContactWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWidgetView.swift; sourceTree = "<group>"; };
+		B100006500010000000002 /* DonutChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChartWidgetView.swift; sourceTree = "<group>"; };
+		B100006600010000000002 /* FieldWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldWidgetView.swift; sourceTree = "<group>"; };
+		B100006700010000000002 /* FileUploadWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadWidgetView.swift; sourceTree = "<group>"; };
+		B100006800010000000002 /* FileViewerWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewerWidgetView.swift; sourceTree = "<group>"; };
+		B100006900010000000002 /* FunnelChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnelChartWidgetView.swift; sourceTree = "<group>"; };
+		B100006A00010000000002 /* GanttChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChartWidgetView.swift; sourceTree = "<group>"; };
+		B100006B00010000000002 /* GoogleMapWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapWidgetView.swift; sourceTree = "<group>"; };
+		B100006C00010000000002 /* HeatMapWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapWidgetView.swift; sourceTree = "<group>"; };
+		B100006D00010000000002 /* IFrameWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFrameWidgetView.swift; sourceTree = "<group>"; };
+		B100006E00010000000002 /* ImageDisplayWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayWidgetView.swift; sourceTree = "<group>"; };
+		B100006F00010000000002 /* ImportWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWidgetView.swift; sourceTree = "<group>"; };
+		B100007000010000000002 /* KanbanWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanWidgetView.swift; sourceTree = "<group>"; };
+		B100007100010000000002 /* KnowledgeGraphWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeGraphWidgetView.swift; sourceTree = "<group>"; };
+		B100007200010000000002 /* LineChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartWidgetView.swift; sourceTree = "<group>"; };
+		B100007300010000000002 /* MetricWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricWidgetView.swift; sourceTree = "<group>"; };
+		B100007400010000000002 /* PaymentGatewayWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayWidgetView.swift; sourceTree = "<group>"; };
+		B100007500010000000002 /* PieChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartWidgetView.swift; sourceTree = "<group>"; };
+		B100007600010000000002 /* PipelineWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineWidgetView.swift; sourceTree = "<group>"; };
+		B100007700010000000002 /* RadarChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartWidgetView.swift; sourceTree = "<group>"; };
+		B100007800010000000002 /* RadialChartWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialChartWidgetView.swift; sourceTree = "<group>"; };
+		B100007900010000000002 /* ReportsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsWidgetView.swift; sourceTree = "<group>"; };
+		B100007A00010000000002 /* RichTextDisplayWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextDisplayWidgetView.swift; sourceTree = "<group>"; };
+		B100007B00010000000002 /* RichTextEditorWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextEditorWidgetView.swift; sourceTree = "<group>"; };
+		B100007C00010000000002 /* StepperWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperWidgetView.swift; sourceTree = "<group>"; };
+		B100007D00010000000002 /* TabWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabWidgetView.swift; sourceTree = "<group>"; };
+		B100007E00010000000002 /* TableWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableWidgetView.swift; sourceTree = "<group>"; };
+		B100007F00010000000002 /* TemplateBuilderWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuilderWidgetView.swift; sourceTree = "<group>"; };
+		B100008000010000000002 /* TodoListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListWidgetView.swift; sourceTree = "<group>"; };
+		B100008100010000000002 /* VideoDisplayWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDisplayWidgetView.swift; sourceTree = "<group>"; };
+		B100008200010000000002 /* WhiteboardWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteboardWidgetView.swift; sourceTree = "<group>"; };
+		B100008300010000000002 /* WidgetNameTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNameTemplateView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E76C1C8E9F9489E595B3878E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB34563CC657336B36B30860 /* Pods_iosApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		058557D7273AAEEB004C7B11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14119C27BE9F9BAD02C21FB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2BD2BC9AB12F3F84E8E06CD /* Pods_iosApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7555FF72242A565900829871 = {
+			isa = PBXGroup;
+			children = (
+				7555FF7D242A565900829871 /* iosApp */,
+				7555FF7C242A565900829871 /* Products */,
+				98EF54578C950D0184B4E143 /* Pods */,
+				14119C27BE9F9BAD02C21FB6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7555FF7C242A565900829871 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF7B242A565900829871 /* iosApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7555FF7D242A565900829871 /* iosApp */ = {
+			isa = PBXGroup;
+			children = (
+				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				B100004400010000000001 /* Components */,
+				B100002000010000000001 /* DI */,
+				B100004600010000000001 /* Helpers */,
+				B100005300010000000001 /* Services */,
+				B100002100010000000001 /* ViewModel */,
+				B100002200010000000001 /* Navigation */,
+				B100002300010000000001 /* Scaffold */,
+				B100002400010000000001 /* Screen */,
+				B100002500010000000001 /* Theme */,
+				B100003400010000000001 /* Widget */,
+				7555FF8C242A565B00829871 /* Info.plist */,
+				058557D7273AAEEB004C7B11 /* Preview Content */,
+				B100000100010000000002 /* SnappApp.swift */,
+			);
+			path = iosApp;
+			sourceTree = "<group>";
+		};
+		B100004400010000000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B100004300010000000002 /* KeyboardFriendlyTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B100004600010000000001 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B100004500010000000002 /* ToastManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B100005300010000000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B100005200010000000002 /* LayoutApiService.swift */,
+				B100005400010000000002 /* DataApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B100002000010000000001 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B100000200010000000002 /* IosKoinSetup.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B100002100010000000001 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B100001600010000000002 /* AuthViewModel.swift */,
+				B100001700010000000002 /* LayoutViewModel.swift */,
+				B100001800010000000002 /* GenericPageViewModel.swift */,
+				B100001900010000000002 /* RecordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B100002200010000000001 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B100000300010000000002 /* AppRouter.swift */,
+				B100004000010000000002 /* AppNavigationStack.swift */,
+				B100000400010000000002 /* RootView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B100002300010000000001 /* Scaffold */ = {
+			isa = PBXGroup;
+			children = (
+				B100000500010000000002 /* AppShell.swift */,
+				B100000600010000000002 /* SideDrawer.swift */,
+				B100000700010000000002 /* TopToolbar.swift */,
+				B100000800010000000002 /* AppFooter.swift */,
+				B100005000010000000002 /* SkeletonShell.swift */,
+				B100005100010000000002 /* BottomNavBar.swift */,
+			);
+			path = Scaffold;
+			sourceTree = "<group>";
+		};
+		B100002400010000000001 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B100002600010000000001 /* Login */,
+				B100002700010000000001 /* Generic */,
+				B100002800010000000001 /* Record */,
+				B100002900010000000001 /* Reports */,
+				B100004200010000000001 /* Error */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		B100004200010000000001 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				B100004100010000000002 /* NotFoundView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		B100002600010000000001 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B100000900010000000002 /* LoginView.swift */,
+				B100001000010000000002 /* ForgotPasswordView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B100002700010000000001 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				B100001100010000000002 /* GenericPageView.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		B100002800010000000001 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				B100001200010000000002 /* RecordDetailView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		B100002900010000000001 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				B100001300010000000002 /* ReportsView.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		B100002500010000000001 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B100001400010000000002 /* AppTheme.swift */,
+				B100001500010000000002 /* ThemeColors.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		B100003400010000000001 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				B100003000010000000002 /* WidgetRegistry.swift */,
+				B100003100010000000002 /* WidgetRenderContext.swift */,
+				B100003200010000000002 /* WidgetAction.swift */,
+				B100003300010000000002 /* WidgetHost.swift */,
+				B100008500010000000002 /* WidgetErrorWrapper.swift */,
+				B100005500010000000002 /* ContainerLayoutView.swift */,
+				B100005600010000000002 /* LayoutHelper.swift */,
+				B100005700010000000001 /* Renderers */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		B100005700010000000001 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				B100005800010000000002 /* AccordionWidgetView.swift */,
+				B100005900010000000002 /* ActivityFeedWidgetView.swift */,
+				B100005A00010000000002 /* AreaChartWidgetView.swift */,
+				B100005B00010000000002 /* BarChartWidgetView.swift */,
+				B100005C00010000000002 /* BubbleChartWidgetView.swift */,
+				B100005D00010000000002 /* ButtonWidgetView.swift */,
+				B100005E00010000000002 /* CalendarWidgetView.swift */,
+				B100005F00010000000002 /* CandlestickWidgetView.swift */,
+				B100006000010000000002 /* CardWidgetView.swift */,
+				B100006100010000000002 /* CarouselWidgetView.swift */,
+				B100006200010000000002 /* ChatWidgetView.swift */,
+				B100006300010000000002 /* ComprehensiveTableWidgetView.swift */,
+				B100006400010000000002 /* ContactWidgetView.swift */,
+				B100006500010000000002 /* DonutChartWidgetView.swift */,
+				B100006600010000000002 /* FieldWidgetView.swift */,
+				B100006700010000000002 /* FileUploadWidgetView.swift */,
+				B100006800010000000002 /* FileViewerWidgetView.swift */,
+				B100006900010000000002 /* FunnelChartWidgetView.swift */,
+				B100006A00010000000002 /* GanttChartWidgetView.swift */,
+				B100006B00010000000002 /* GoogleMapWidgetView.swift */,
+				B100006C00010000000002 /* HeatMapWidgetView.swift */,
+				B100006D00010000000002 /* IFrameWidgetView.swift */,
+				B100006E00010000000002 /* ImageDisplayWidgetView.swift */,
+				B100006F00010000000002 /* ImportWidgetView.swift */,
+				B100007000010000000002 /* KanbanWidgetView.swift */,
+				B100007100010000000002 /* KnowledgeGraphWidgetView.swift */,
+				B100007200010000000002 /* LineChartWidgetView.swift */,
+				B100007300010000000002 /* MetricWidgetView.swift */,
+				B100007400010000000002 /* PaymentGatewayWidgetView.swift */,
+				B100007500010000000002 /* PieChartWidgetView.swift */,
+				B100007600010000000002 /* PipelineWidgetView.swift */,
+				B100007700010000000002 /* RadarChartWidgetView.swift */,
+				B100007800010000000002 /* RadialChartWidgetView.swift */,
+				B100007900010000000002 /* ReportsWidgetView.swift */,
+				B100007A00010000000002 /* RichTextDisplayWidgetView.swift */,
+				B100007B00010000000002 /* RichTextEditorWidgetView.swift */,
+				B100007C00010000000002 /* StepperWidgetView.swift */,
+				B100007D00010000000002 /* TabWidgetView.swift */,
+				B100007E00010000000002 /* TableWidgetView.swift */,
+				B100007F00010000000002 /* TemplateBuilderWidgetView.swift */,
+				B100008000010000000002 /* TodoListWidgetView.swift */,
+				B100008100010000000002 /* VideoDisplayWidgetView.swift */,
+				B100008200010000000002 /* WhiteboardWidgetView.swift */,
+				B100008300010000000002 /* WidgetNameTemplateView.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		98EF54578C950D0184B4E143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AC9773179445288A359B158 /* Pods-iosApp.debug.xcconfig */,
+				059DBF1CBEA0909116DF3582 /* Pods-iosApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7555FF7A242A565900829871 /* iosApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildPhases = (
+				FB6015B97893381A2EFB0E1C /* [CP] Check Pods Manifest.lock */,
+				7555FF77242A565900829871 /* Sources */,
+				7555FF79242A565900829871 /* Resources */,
+				E76C1C8E9F9489E595B3878E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iosApp;
+			productName = iosApp;
+			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7555FF73242A565900829871 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = orgName;
+				TargetAttributes = {
+					7555FF7A242A565900829871 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7555FF72242A565900829871;
+			productRefGroup = 7555FF7C242A565900829871 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7555FF7A242A565900829871 /* iosApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7555FF79242A565900829871 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB6015B97893381A2EFB0E1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iosApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7555FF77242A565900829871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B100000100010000000001 /* SnappApp.swift in Sources */,
+				B100000200010000000001 /* IosKoinSetup.swift in Sources */,
+				B100000300010000000001 /* AppRouter.swift in Sources */,
+				B100000400010000000001 /* RootView.swift in Sources */,
+				B100000500010000000001 /* AppShell.swift in Sources */,
+				B100000600010000000001 /* SideDrawer.swift in Sources */,
+				B100000700010000000001 /* TopToolbar.swift in Sources */,
+				B100000800010000000001 /* AppFooter.swift in Sources */,
+				B100005000010000000001 /* SkeletonShell.swift in Sources */,
+				B100005100010000000001 /* BottomNavBar.swift in Sources */,
+				B100005200010000000001 /* LayoutApiService.swift in Sources */,
+				B100000900010000000001 /* LoginView.swift in Sources */,
+				B100001000010000000001 /* ForgotPasswordView.swift in Sources */,
+				B100001100010000000001 /* GenericPageView.swift in Sources */,
+				B100001200010000000001 /* RecordDetailView.swift in Sources */,
+				B100001300010000000001 /* ReportsView.swift in Sources */,
+				B100001400010000000001 /* AppTheme.swift in Sources */,
+				B100001500010000000001 /* ThemeColors.swift in Sources */,
+				B100001600010000000001 /* AuthViewModel.swift in Sources */,
+				B100001700010000000001 /* LayoutViewModel.swift in Sources */,
+				B100001800010000000001 /* GenericPageViewModel.swift in Sources */,
+				B100001900010000000001 /* RecordViewModel.swift in Sources */,
+				B100003000010000000001 /* WidgetRegistry.swift in Sources */,
+				B100003100010000000001 /* WidgetRenderContext.swift in Sources */,
+				B100003200010000000001 /* WidgetAction.swift in Sources */,
+				B100003300010000000001 /* WidgetHost.swift in Sources */,
+				B100008500010000000001 /* WidgetErrorWrapper.swift in Sources */,
+				B100004000010000000001 /* AppNavigationStack.swift in Sources */,
+				B100004100010000000001 /* NotFoundView.swift in Sources */,
+				B100004300010000000001 /* KeyboardFriendlyTextField.swift in Sources */,
+				B100004500010000000001 /* ToastManager.swift in Sources */,
+				B100005400010000000001 /* DataApiService.swift in Sources */,
+				B100005500010000000001 /* ContainerLayoutView.swift in Sources */,
+				B100005600010000000001 /* LayoutHelper.swift in Sources */,
+				B100005800010000000001 /* AccordionWidgetView.swift in Sources */,
+				B100005900010000000001 /* ActivityFeedWidgetView.swift in Sources */,
+				B100005A00010000000001 /* AreaChartWidgetView.swift in Sources */,
+				B100005B00010000000001 /* BarChartWidgetView.swift in Sources */,
+				B100005C00010000000001 /* BubbleChartWidgetView.swift in Sources */,
+				B100005D00010000000001 /* ButtonWidgetView.swift in Sources */,
+				B100005E00010000000001 /* CalendarWidgetView.swift in Sources */,
+				B100005F00010000000001 /* CandlestickWidgetView.swift in Sources */,
+				B100006000010000000001 /* CardWidgetView.swift in Sources */,
+				B100006100010000000001 /* CarouselWidgetView.swift in Sources */,
+				B100006200010000000001 /* ChatWidgetView.swift in Sources */,
+				B100006300010000000001 /* ComprehensiveTableWidgetView.swift in Sources */,
+				B100006400010000000001 /* ContactWidgetView.swift in Sources */,
+				B100006500010000000001 /* DonutChartWidgetView.swift in Sources */,
+				B100006600010000000001 /* FieldWidgetView.swift in Sources */,
+				B100006700010000000001 /* FileUploadWidgetView.swift in Sources */,
+				B100006800010000000001 /* FileViewerWidgetView.swift in Sources */,
+				B100006900010000000001 /* FunnelChartWidgetView.swift in Sources */,
+				B100006A00010000000001 /* GanttChartWidgetView.swift in Sources */,
+				B100006B00010000000001 /* GoogleMapWidgetView.swift in Sources */,
+				B100006C00010000000001 /* HeatMapWidgetView.swift in Sources */,
+				B100006D00010000000001 /* IFrameWidgetView.swift in Sources */,
+				B100006E00010000000001 /* ImageDisplayWidgetView.swift in Sources */,
+				B100006F00010000000001 /* ImportWidgetView.swift in Sources */,
+				B100007000010000000001 /* KanbanWidgetView.swift in Sources */,
+				B100007100010000000001 /* KnowledgeGraphWidgetView.swift in Sources */,
+				B100007200010000000001 /* LineChartWidgetView.swift in Sources */,
+				B100007300010000000001 /* MetricWidgetView.swift in Sources */,
+				B100007400010000000001 /* PaymentGatewayWidgetView.swift in Sources */,
+				B100007500010000000001 /* PieChartWidgetView.swift in Sources */,
+				B100007600010000000001 /* PipelineWidgetView.swift in Sources */,
+				B100007700010000000001 /* RadarChartWidgetView.swift in Sources */,
+				B100007800010000000001 /* RadialChartWidgetView.swift in Sources */,
+				B100007900010000000001 /* ReportsWidgetView.swift in Sources */,
+				B100007A00010000000001 /* RichTextDisplayWidgetView.swift in Sources */,
+				B100007B00010000000001 /* RichTextEditorWidgetView.swift in Sources */,
+				B100007C00010000000001 /* StepperWidgetView.swift in Sources */,
+				B100007D00010000000001 /* TabWidgetView.swift in Sources */,
+				B100007E00010000000001 /* TableWidgetView.swift in Sources */,
+				B100007F00010000000001 /* TemplateBuilderWidgetView.swift in Sources */,
+				B100008000010000000001 /* TodoListWidgetView.swift in Sources */,
+				B100008100010000000001 /* VideoDisplayWidgetView.swift in Sources */,
+				B100008200010000000001 /* WhiteboardWidgetView.swift in Sources */,
+				B100008300010000000001 /* WidgetNameTemplateView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7555FFA3242A565B00829871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7555FFA4242A565B00829871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7555FFA6242A565B00829871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AC9773179445288A359B158 /* Pods-iosApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7555FFA7242A565B00829871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 059DBF1CBEA0909116DF3582 /* Pods-iosApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7555FFA3242A565B00829871 /* Debug */,
+				7555FFA4242A565B00829871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7555FFA6242A565B00829871 /* Debug */,
+				7555FFA7242A565B00829871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7555FF73242A565900829871 /* Project object */;
+}
