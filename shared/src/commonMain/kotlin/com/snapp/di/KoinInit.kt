@@ -2,6 +2,7 @@ package com.snapp.di
 
 import com.snapp.data.api.SnappApiClient
 import com.snapp.data.model.auth.UserSession
+import com.snapp.data.model.page.PageConfig
 import com.snapp.data.store.TokenStorage
 import com.snapp.data.store.UnauthorizedNotifier
 import com.snapp.domain.repository.AuthRepository
@@ -39,6 +40,9 @@ object SnappKoin {
         koinApp!!.koin.get<TokenStorage>().clearSession()
         koinApp!!.koin.get<UnauthorizedNotifier>().notifyUnauthorized()
     }
+
+    fun parsePageConfigFromJson(json: String): PageConfig =
+        koinApp!!.koin.get<SnappApiClient>().parsePageConfigFromJson(json)
 }
 
 fun initKoin(platformContext: Any? = null) {
@@ -54,3 +58,6 @@ fun getStoredSession(): UserSession? = SnappKoin.getStoredSession()
 
 /** Call when any API returns 401 (e.g. native iOS layout). Clears storage and notifies so UI shows login. Exposed as top-level for Swift. */
 fun clearSessionDueToUnauthorized() = SnappKoin.clearSessionDueToUnauthorized()
+
+/** Parse page config from JSON. Exposed as top-level for Swift (use this if SnappKoin.parsePageConfigFromJson is not visible). */
+fun parsePageConfigFromJson(json: String): PageConfig = SnappKoin.parsePageConfigFromJson(json)

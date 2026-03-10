@@ -68,6 +68,9 @@ class SnappApiClient(
         return sharedJson.decodeFromString(PageConfig.serializer(), text)
     }
 
+    fun parsePageConfigFromJson(json: String): PageConfig =
+        sharedJson.decodeFromString(PageConfig.serializer(), json)
+
     suspend fun getWidgetData(dataKey: String, body: JsonObject? = null): JsonObject {
         ensureTokenFromStorage()
         val payload = body ?: buildJsonObject { }

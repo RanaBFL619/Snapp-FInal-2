@@ -102,22 +102,18 @@ struct ComprehensiveTableWidgetView: View {
             } else if listData.isEmpty {
                 emptyView
             } else {
-                headerView
                 if !selectedRows.isEmpty && selectionEnabled {
-                    selectionBarView
-                    bulkToolbarView
+                    selectionHeaderView
+                } else {
+                    headerView
                 }
                 listContentView
-                if !selectedRows.isEmpty && selectionEnabled {
-                    selectionFooterView
-                }
                 paginationView
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(Color(UIColor.systemGroupedBackground))
         .onAppear { loadInitial() }
-        .overlay(alignment: .bottomTrailing) { fabView }
         .overlay(alignment: .bottomTrailing) {
             if showPageSizePicker {
                 pageSizeDropdownView
@@ -125,6 +121,12 @@ struct ComprehensiveTableWidgetView: View {
                     .padding(.trailing, 16)
             }
         }
+        .background(
+            FixedBottomBarHost(
+                isActive: !selectedRows.isEmpty && selectionEnabled,
+                barContent: { AnyView(selectionFooterView) }
+            )
+        )
         .sheet(isPresented: $isFormOpen) { formSheet }
         .sheet(isPresented: $isFilterOpen) { filterDrawerSheet }
         .sheet(isPresented: $showColumnsSheet) { columnsVisibilitySheet }
@@ -533,71 +535,80 @@ struct ComprehensiveTableWidgetView: View {
         .background(Color(UIColor.systemBackground))
     }
 
-    private var selectionBarView: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.title2)
-                .foregroundColor(.accentColor)
-            Text("\(selectedRows.count) Selected")
-                .font(.headline)
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
-            Spacer()
-            Button("Clear") { selectedRows.removeAll() }
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundColor(.primary)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 8)
-                .background(Color(UIColor.tertiarySystemFill))
-                .cornerRadius(8)
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .background(Color(UIColor.systemBackground))
-    }
-
-    private var bulkToolbarView: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                Button {
-                    selectedRows = Set(listData.map { recordId(from: $0) })
-                } label: {
-                    HStack(spacing: 6) {
-                        Image(systemName: "arrow.down.circle")
-                            .font(.subheadline)
-                        Text("Select All")
-                            .font(.subheadline)
+    /// Selection mode header: same white area as search bar (replaces headerView). Title + action buttons only; Deselect/Selected are on the fixed bottom bar.
+    private var selectionHeaderView: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            if let title = context.widget.title, !title.isEmpty {
+                Text(title)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+            }
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 10) {
+                    Button {
+                        selectedRows = Set(listData.map { recordId(from: $0) })
+                    } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "arrow.down.circle")
+                                .font(.subheadline)
+                            Text("Select All")
+                                .font(.subheadline)
+                        }
+                        .foregroundColor(.accentColor)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color(UIColor.systemBackground))
+                        .cornerRadius(8)
+                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(UIColor.separator), lineWidth: 1))
                     }
-                    .foregroundColor(.accentColor)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
-                    .background(Color(UIColor.tertiarySystemFill))
-                    .cornerRadius(8)
-                }
-                .buttonStyle(.plain)
-                Button { Task { await handleExport() } } label: {
-                    HStack(spacing: 6) {
-                        Image(systemName: "square.and.arrow.down")
-                            .font(.subheadline)
-                        Text("Export")
-                            .font(.subheadline)
+                    .buttonStyle(.plain)
+                    Button { Task { await handleExport() } } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "square.and.arrow.down")
+                                .font(.subheadline)
+                            Text("Export")
+                                .font(.subheadline)
+                        }
+                        .foregroundColor(.accentColor)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color(UIColor.systemBackground))
+                        .cornerRadius(8)
+                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(UIColor.separator), lineWidth: 1))
                     }
-                    .foregroundColor(.accentColor)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
-                    .background(Color(UIColor.tertiarySystemFill))
-                    .cornerRadius(8)
+                    .buttonStyle(.plain)
+                    if !actionsConfig.bulk.isEmpty {
+                        HStack(spacing: 6) {
+                            Image(systemName: "person.2")
+                                .font(.subheadline)
+                            Image(systemName: "chevron.right")
+                                .font(.caption2)
+                        }
+                        .foregroundColor(Color(UIColor.secondaryLabel))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color(UIColor.systemBackground))
+                        .cornerRadius(8)
+                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(UIColor.separator), lineWidth: 1))
+                    }
                 }
-                .buttonStyle(.plain)
-                ForEach(actionsConfig.bulk) { action in
-                    BulkActionButton(action: action, onDelete: handleBulkDelete)
+                if !actionsConfig.bulk.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(actionsConfig.bulk) { action in
+                                BulkActionButton(action: action, onDelete: handleBulkDelete)
+                            }
+                        }
+                        .padding(.horizontal, 2)
+                    }
                 }
             }
-            .padding(.horizontal, 16)
         }
-        .padding(.vertical, 10)
-        .background(Color(UIColor.secondarySystemBackground))
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(UIColor.systemBackground))
     }
 
     private var selectionFooterView: some View {
@@ -620,8 +631,6 @@ struct ComprehensiveTableWidgetView: View {
                         .fontWeight(.semibold)
                     Image(systemName: "checkmark")
                         .font(.caption)
-                    Image(systemName: "chevron.down")
-                        .font(.caption2)
                 }
                 .foregroundColor(.white)
                 .padding(.horizontal, 16)
@@ -634,6 +643,7 @@ struct ComprehensiveTableWidgetView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .background(Color(UIColor.systemBackground))
+        .shadow(color: Color.black.opacity(0.1), radius: 6, x: 0, y: -2)
     }
 
     private var listContentView: some View {
@@ -670,12 +680,14 @@ struct ComprehensiveTableWidgetView: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
+            .padding(.bottom, (!selectedRows.isEmpty && selectionEnabled) ? 72 : 0)
         }
         .background(Color(UIColor.systemGroupedBackground))
     }
 
     private func tableRowView(_ row: [String: Any]) -> some View {
         let rid = recordId(from: row)
+        let isSelected = selectionEnabled && selectedRows.contains(rid)
         return HStack(alignment: .top, spacing: 8) {
             if selectionEnabled {
                 Button {
@@ -685,9 +697,9 @@ struct ComprehensiveTableWidgetView: View {
                         selectedRows.insert(rid)
                     }
                 } label: {
-                    Image(systemName: selectedRows.contains(rid) ? "checkmark.circle.fill" : "circle")
-                        .font(.body)
-                        .foregroundColor(selectedRows.contains(rid) ? .accentColor : Color(UIColor.tertiaryLabel))
+                    Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                        .font(.title3)
+                        .foregroundColor(isSelected ? .accentColor : Color(UIColor.tertiaryLabel))
                 }
                 .buttonStyle(.plain)
             }
@@ -739,10 +751,14 @@ struct ComprehensiveTableWidgetView: View {
                 }
             }
         }
-        .padding(10)
+        .padding(12)
         .background(Color(UIColor.systemBackground))
         .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(isSelected ? Color.accentColor.opacity(0.4) : Color(UIColor.separator.withAlphaComponent(0.3)), lineWidth: isSelected ? 2 : 1)
+        )
+        .shadow(color: Color.black.opacity(0.06), radius: 2, x: 0, y: 1)
     }
 
     private func iconName(for action: String) -> String {
@@ -1021,29 +1037,6 @@ struct ComprehensiveTableWidgetView: View {
         return [.pageNum(1), .ellipsis, .pageNum(page - 1), .pageNum(page), .pageNum(page + 1), .ellipsis, .pageNum(total)]
     }
 
-    private var fabView: some View {
-        Group {
-            if actionsConfig.toolbar.contains(where: { $0.action == "add" }) {
-                Button {
-                    editingItem = nil
-                    isFormOpen = true
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 56, height: 56)
-                        .background(Color.accentColor)
-                        .clipShape(Circle())
-                        .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 3)
-                }
-                .buttonStyle(.plain)
-                .padding(.trailing, 20)
-                .padding(.bottom, 20)
-            }
-        }
-    }
-
     private var formSheet: some View {
         NavigationStack {
             ComprehensiveTableFormSheet(
@@ -1070,6 +1063,12 @@ private struct BulkActionButton: View {
     let action: TableActionConfig
     let onDelete: () -> Void
 
+    private var buttonBackground: some View {
+        Color(UIColor.systemBackground)
+            .cornerRadius(8)
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(UIColor.separator), lineWidth: 1))
+    }
+
     var body: some View {
         if action.action == "delete" {
             AnyView(
@@ -1078,8 +1077,7 @@ private struct BulkActionButton: View {
                         .font(.body)
                         .foregroundColor(.red)
                         .frame(width: 44, height: 36)
-                        .background(Color(UIColor.tertiarySystemFill))
-                        .cornerRadius(8)
+                        .background(buttonBackground)
                 }
                 .buttonStyle(.plain)
             )
@@ -1095,8 +1093,7 @@ private struct BulkActionButton: View {
                     .foregroundColor(.accentColor)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 8)
-                    .background(Color(UIColor.tertiarySystemFill))
-                    .cornerRadius(8)
+                    .background(buttonBackground)
                 }
                 .buttonStyle(.plain)
             )
@@ -1143,6 +1140,93 @@ private struct ComprehensiveTableFormSheet: View {
                 }
                 .disabled(isLoading)
             }
+        }
+    }
+}
+
+// MARK: - Fixed bottom bar at screen bottom (above tab bar)
+private struct FixedBottomBarHost: View {
+    let isActive: Bool
+    let barContent: () -> AnyView
+
+    var body: some View {
+        FixedBottomBarHostRepresentable(isActive: isActive, barContent: barContent)
+            .frame(width: 0, height: 0)
+            .allowsHitTesting(false)
+    }
+}
+
+private struct FixedBottomBarHostRepresentable: UIViewControllerRepresentable {
+    let isActive: Bool
+    let barContent: () -> AnyView
+
+    func makeUIViewController(context: Context) -> FixedBottomBarHostController {
+        FixedBottomBarHostController()
+    }
+
+    func updateUIViewController(_ uiViewController: FixedBottomBarHostController, context: Context) {
+        uiViewController.update(isActive: isActive, barContent: barContent())
+    }
+}
+
+/// Full-screen overlay that only receives touches on its subviews (the bar); passes through elsewhere so list can scroll.
+private final class PassThroughOverlayView: UIView {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hit = super.hitTest(point, with: event)
+        return hit == self ? nil : hit
+    }
+}
+
+private final class FixedBottomBarHostController: UIViewController {
+    private var overlayView: UIView?
+    private var hostingController: UIHostingController<AnyView>?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clear
+        view.isUserInteractionEnabled = false
+    }
+
+    func update(isActive: Bool, barContent: AnyView) {
+        let window: UIWindow? = view.window ?? UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first(where: { $0.isKeyWindow })
+        guard let window = window else { return }
+
+        if isActive {
+            if overlayView == nil {
+                let overlay = PassThroughOverlayView()
+                overlay.backgroundColor = .clear
+                overlay.translatesAutoresizingMaskIntoConstraints = false
+                window.addSubview(overlay)
+                NSLayoutConstraint.activate([
+                    overlay.topAnchor.constraint(equalTo: window.topAnchor),
+                    overlay.leadingAnchor.constraint(equalTo: window.leadingAnchor),
+                    overlay.trailingAnchor.constraint(equalTo: window.trailingAnchor),
+                    overlay.bottomAnchor.constraint(equalTo: window.bottomAnchor)
+                ])
+                overlayView = overlay
+
+                let hosting = UIHostingController(rootView: barContent)
+                hosting.view.backgroundColor = .clear
+                hosting.view.translatesAutoresizingMaskIntoConstraints = false
+                overlay.addSubview(hosting.view)
+                hostingController = hosting
+
+                NSLayoutConstraint.activate([
+                    hosting.view.leadingAnchor.constraint(equalTo: overlay.leadingAnchor),
+                    hosting.view.trailingAnchor.constraint(equalTo: overlay.trailingAnchor),
+                    hosting.view.heightAnchor.constraint(greaterThanOrEqualToConstant: 56),
+                    hosting.view.bottomAnchor.constraint(equalTo: overlay.safeAreaLayoutGuide.bottomAnchor)
+                ])
+            }
+            hostingController?.rootView = barContent
+        } else {
+            hostingController?.view.removeFromSuperview()
+            hostingController = nil
+            overlayView?.removeFromSuperview()
+            overlayView = nil
         }
     }
 }
