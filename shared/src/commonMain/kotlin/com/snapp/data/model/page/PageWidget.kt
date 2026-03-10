@@ -70,4 +70,24 @@ data class PageWidget(
             .filter { it.type == "field" && it.options?.get("isRequired")?.jsonPrimitive?.booleanOrNull == true }
             .mapNotNull { it.dataKey }
     }
+
+    // ---- Table / list widget options (for iOS TableWidgetView) ----
+
+    /** Full options as JSON string so Swift can parse once (fields, actionsConfig, filtersConfig, etc.). */
+    fun getTableOptionsJson(): String? = options?.toString()
+
+    fun getTableSearchEnabled(): Boolean? = options?.get("searchEnabled")?.jsonPrimitive?.booleanOrNull
+
+    fun getTableSelectionEnabled(): Boolean? = options?.get("selectionEnabled")?.jsonPrimitive?.booleanOrNull
+
+    fun getTablePageSize(): Int? = options?.get("pageSize")?.jsonPrimitive?.intOrNull
+
+    /** options.fields (columns) as JSON string for Swift to decode. */
+    fun getTableFieldsJson(): String? = options?.get("fields")?.toString()
+
+    /** options.actionsConfig (toolbar, bulk, row) as JSON string for Swift to decode. */
+    fun getTableActionsConfigJson(): String? = options?.get("actionsConfig")?.toString()
+
+    /** options.filtersConfig as JSON string for Swift to decode. */
+    fun getTableFiltersConfigJson(): String? = options?.get("filtersConfig")?.toString()
 }

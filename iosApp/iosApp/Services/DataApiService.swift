@@ -86,3 +86,66 @@ func dataDelete(authToken: String?, schemaType: String, recordIds: [String]) asy
     if http.statusCode == 401 { SnappKoin.shared.clearSessionDueToUnauthorized(); throw DataApiError.httpStatus(401) }
     guard (200...299).contains(http.statusCode) else { throw DataApiError.httpStatus(http.statusCode) }
 }
+
+// MARK: - Table / list view (POST /data/view/{dataKey})
+
+/// Meta returned by POST /data/view/{dataKey} (same shape as shared TableMeta).
+struct TableViewMeta {
+    let totalRecords: Int
+    let totalPages: Int
+    let currentPage: Int
+    let pageSize: Int
+}
+
+/// POST /data/view/{dataKey} with TableRequest body. Returns records + meta for pagination/sort/filter/search.
+func dataViewTable(
+    authToken: String?,
+    dataKey: String,
+    page: Int,
+    pageSize: Int,
+    sort: [(field: String, direction: String)]? = nil,
+    filters: [String: Any]? = nil,
+    search: String? = nil,
+    recordId: String? = nil
+) async throws -> (records: [[String: Any]], meta: TableViewMeta) {
+    guard let token = authToken, !token.isEmpty else { throw DataApiError.notAuthenticated }
+    var body: [String: Any] = [
+        "page": page,
+        "pageSize": pageSize
+    ]
+    if let sort = sort, !sort.isEmpty {
+        body["sort"] = sort.map { ["field": $0.field, "direction": $0.direction] }
+    }
+    if let filters = filters, !filters.isEmpty {
+        body["filters"] = filters
+    }
+    if let search = search, !search.isEmpty {
+        body["search"] = search
+    }
+    if let recordId = recordId, !recordId.isEmpty {
+        body["recordId"] = recordId
+    }
+    let url = URL(string: "\(dataBaseURL)/data/view/\(dataKey)")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue("application/json", forHTTPHeaderField: "Accept")
+    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    request.httpBody = try JSONSerialization.data(withJSONObject: body)
+
+    let (data, response) = try await URLSession.shared.data(for: request)
+    guard let http = response as? HTTPURLResponse else { throw DataApiError.invalidResponse }
+    if http.statusCode == 401 { SnappKoin.shared.clearSessionDueToUnauthorized(); throw DataApiError.httpStatus(401) }
+    guard (200...299).contains(http.statusCode) else { throw DataApiError.httpStatus(http.statusCode) }
+    guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+          let records = json["records"] as? [[String: Any]],
+          let metaObj = json["meta"] as? [String: Any],
+          let totalRecords = metaObj["totalRecords"] as? Int,
+          let totalPages = metaObj["totalPages"] as? Int,
+          let pageSizeResp = metaObj["pageSize"] as? Int else {
+        throw DataApiError.invalidResponse
+    }
+    let currentPage = metaObj["page"] as? Int ?? metaObj["currentPage"] as? Int ?? 1
+    let meta = TableViewMeta(totalRecords: totalRecords, totalPages: totalPages, currentPage: currentPage, pageSize: pageSizeResp)
+    return (records, meta)
+}
